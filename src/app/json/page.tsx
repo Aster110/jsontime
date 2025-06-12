@@ -37,6 +37,7 @@ export default function JsonPage() {
   const [errorLine, setErrorLine] = useState<number | null>(null);
   const [errorColumn, setErrorColumn] = useState<number | null>(null);
   const [isValid, setIsValid] = useState<boolean | null>(null);
+  const [successMessage, setSuccessMessage] = useState('');
   const fileInputRef = useRef<HTMLInputElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const lineNumbersRef = useRef<HTMLDivElement>(null);
@@ -53,6 +54,7 @@ export default function JsonPage() {
       setErrorLine(null);
       setErrorColumn(null);
       setIsValid(null);
+      setSuccessMessage('');
       return;
     }
 
@@ -66,9 +68,11 @@ export default function JsonPage() {
       setErrorLine(null);
       setErrorColumn(null);
       setIsValid(true);
+      setSuccessMessage('JSON 格式正确');
     } catch (err) {
       const errorMsg = (err as Error).message;
       setIsValid(false);
+      setSuccessMessage('');
       const match = errorMsg.match(/position (\d+)/);
 
       if (match) {
@@ -328,6 +332,13 @@ export default function JsonPage() {
                 <div className="p-3 bg-destructive/10 text-destructive rounded-lg flex items-center gap-2">
                   <AlertCircle className="h-4 w-4" />
                   {error}
+                </div>
+              )}
+              {/* 成功提示 */}
+              {successMessage && (
+                <div className="p-3 bg-green-100 dark:bg-green-900/20 text-green-600 dark:text-green-400 rounded-lg flex items-center gap-2">
+                  <Check className="h-4 w-4" />
+                  {successMessage}
                 </div>
               )}
               {/* JSON 格式提示区 */}
