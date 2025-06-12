@@ -124,7 +124,9 @@ export default function JsonPage() {
   // 处理输入变化 - 添加防抖
   const handleInputChange = (value: string) => {
     setInput(value);
-    updateLineNumbers(value);
+    // 根据实际内容更新行号
+    const lines = value.split('\n');
+    setLineCount(lines.length);
 
     if (debounceValidation.current) {
       clearTimeout(debounceValidation.current);
@@ -153,6 +155,9 @@ export default function JsonPage() {
       const formatted = JSON.stringify(JSON.parse(processedInput), null, 2);
       setInput(formatted);
       setError('');
+      // 格式化后更新行号
+      const lines = formatted.split('\n');
+      setLineCount(lines.length);
     } catch (e: unknown) {
       const errorMessage = e instanceof Error ? e.message : '未知错误';
       setError(`格式化失败: ${errorMessage}`);
@@ -168,6 +173,8 @@ export default function JsonPage() {
       const compressed = JSON.stringify(JSON.parse(processedInput));
       setInput(compressed);
       setError('');
+      // 压缩后设置为单行
+      setLineCount(1);
     } catch (e: unknown) {
       const errorMessage = e instanceof Error ? e.message : '未知错误';
       setError(`压缩失败: ${errorMessage}`);
