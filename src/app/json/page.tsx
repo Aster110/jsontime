@@ -303,13 +303,25 @@ export default function JsonPage() {
               </div>
               {/* 操作按钮区 */}
               <div className="flex flex-wrap gap-2 mt-2">
-                <Button onClick={formatJSON} variant="default">格式化</Button>
-                <Button onClick={compressJSON} variant="secondary">压缩一行</Button>
-                <Button onClick={() => validateJsonRealtime(input)} variant="outline">校验格式</Button>
-                <Button onClick={addEscape} variant="outline">添加转义</Button>
-                <Button onClick={removeEscapeChars} variant="outline">去除转义</Button>
-                <CopyButton text={input} />
-                <Button onClick={clearInput} variant="outline">清空</Button>
+                <Button onClick={formatJSON} variant="default" size="sm" className="bg-blue-600 hover:bg-blue-700">
+                  格式化
+                </Button>
+                <Button onClick={compressJSON} variant="default" size="sm" className="bg-blue-600 hover:bg-blue-700">
+                  压缩一行
+                </Button>
+                <Button onClick={() => validateJsonRealtime(input)} variant="default" size="sm" className="bg-blue-600 hover:bg-blue-700">
+                  校验格式
+                </Button>
+                <Button onClick={addEscape} variant="outline" size="sm" className="border-blue-600 text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/20">
+                  添加转义
+                </Button>
+                <Button onClick={removeEscapeChars} variant="outline" size="sm" className="border-blue-600 text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/20">
+                  去除转义
+                </Button>
+                <CopyButton text={input} className="border-blue-600 text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/20" />
+                <Button onClick={clearInput} variant="outline" size="sm" className="border-blue-600 text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/20">
+                  清空
+                </Button>
               </div>
               {/* 错误提示 */}
               {error && (
