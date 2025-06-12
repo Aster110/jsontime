@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Copy, Check, Upload, AlertCircle, Sun, Moon } from "lucide-react";
 import { useTheme } from "next-themes";
+import Link from 'next/link';
 
 // Copy Button Component
 function CopyButton({ text, className = "" }: { text: string; className?: string }) {
@@ -237,26 +238,36 @@ export default function JsonPage() {
         <aside className="w-64 min-w-[200px] bg-white dark:bg-zinc-900 rounded-xl border p-6 h-fit self-start shadow-sm">
           <div className="text-lg font-semibold mb-6 text-blue-600">工具列表</div>
           <nav className="space-y-2">
-            <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 font-medium">
-              <span className="text-base">{'<>'}</span>
-              <span>JSON 格式化</span>
-            </div>
-            <div className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-50 dark:hover:bg-zinc-800 cursor-pointer text-gray-600 dark:text-gray-300">
-              <span className="text-base">#</span>
-              <span>Base64 编解码</span>
-            </div>
-            <div className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-50 dark:hover:bg-zinc-800 cursor-pointer text-gray-600 dark:text-gray-300">
-              <span className="text-base">⏰</span>
-              <span>时间戳转换</span>
-            </div>
-            <div className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-50 dark:hover:bg-zinc-800 cursor-pointer text-gray-600 dark:text-gray-300">
-              <span className="text-base">T</span>
-              <span>文本工具</span>
-            </div>
-            <div className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-50 dark:hover:bg-zinc-800 cursor-pointer text-gray-600 dark:text-gray-300">
-              <span className="text-base">📄</span>
-              <span>文本对比</span>
-            </div>
+            <Link href="/json" className="block">
+              <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 font-medium">
+                <span className="text-base">{'<>'}</span>
+                <span>JSON 格式化</span>
+              </div>
+            </Link>
+            <Link href="/base64" className="block">
+              <div className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-50 dark:hover:bg-zinc-800 cursor-pointer text-gray-600 dark:text-gray-300">
+                <span className="text-base">#</span>
+                <span>Base64 编解码</span>
+              </div>
+            </Link>
+            <Link href="/timestamp" className="block">
+              <div className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-50 dark:hover:bg-zinc-800 cursor-pointer text-gray-600 dark:text-gray-300">
+                <span className="text-base">⏰</span>
+                <span>时间戳转换</span>
+              </div>
+            </Link>
+            <Link href="/text" className="block">
+              <div className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-50 dark:hover:bg-zinc-800 cursor-pointer text-gray-600 dark:text-gray-300">
+                <span className="text-base">T</span>
+                <span>文本工具</span>
+              </div>
+            </Link>
+            <Link href="/diff" className="block">
+              <div className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-50 dark:hover:bg-zinc-800 cursor-pointer text-gray-600 dark:text-gray-300">
+                <span className="text-base">📄</span>
+                <span>文本对比</span>
+              </div>
+            </Link>
           </nav>
         </aside>
         {/* 右侧主内容区 */}
