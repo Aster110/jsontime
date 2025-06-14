@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,6 +19,7 @@ export default function RootLayout({
   return (
     <html lang="zh" suppressHydrationWarning>
       <body className={`${inter.className} bg-white dark:bg-black`}>
+        <GoogleAnalytics />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
