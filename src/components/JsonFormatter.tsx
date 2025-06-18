@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { Upload, AlertCircle, Check } from "lucide-react";
+import { AlertCircle, Check } from "lucide-react";
 import CopyButton from './CopyButton';
 
 export default function JsonFormatter() {
@@ -278,7 +278,7 @@ export default function JsonFormatter() {
         )}
         {/* JSON 格式提示区 */}
         <div className="mt-4 p-4 bg-muted/60 rounded-lg text-sm flex gap-2 items-start">
-          <span className="mt-0.5 text-yellow-500"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></span>
+          <span className="mt-0.5 text-yellow-500"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg></span>
           <div>
             <div>JSON 格式提示：</div>
             <ul className="list-disc pl-5 mt-1 space-y-0.5">

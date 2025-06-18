@@ -187,14 +187,14 @@ export default function TextDiff() {
 
         {/* 使用说明 */}
         <div className="mt-4 p-4 bg-muted/60 rounded-lg text-sm flex gap-2 items-start">
-          <span className="mt-0.5 text-yellow-500"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></span>
+          <span className="mt-0.5 text-yellow-500"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg></span>
           <div>
             <div>文本比对使用说明：</div>
             <ul className="list-disc pl-5 mt-1 space-y-0.5">
               <li>在左右两侧输入要比较的文本</li>
-              <li>点击"比较差异"按钮查看结果</li>
+              <li>点击{"比较差异"}按钮查看结果</li>
               <li>差异部分将用不同颜色标记</li>
-              <li>可以使用"交换文本"按钮交换两侧的内容</li>
+              <li>可以使用{"交换文本"}按钮交换两侧的内容</li>
             </ul>
           </div>
         </div>
