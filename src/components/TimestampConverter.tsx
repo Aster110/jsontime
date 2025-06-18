@@ -285,7 +285,7 @@ export default function TimestampConverter() {
             <ul className="list-disc pl-5 mt-1 space-y-0.5">
               <li>可选择秒级（10位）或毫秒级（13位）时间戳单位</li>
               <li>日期格式建议使用：YYYY-MM-DD HH:MM:SS</li>
-              <li>可以点击"使用当前时间"快速获取当前时间</li>
+              <li>可以点击{"使用当前时间"}快速获取当前时间</li>
               <li>转换结果可以直接复制使用</li>
             </ul>
           </div>
